@@ -1,10 +1,12 @@
+function sumaCorregida(a, b) {
+  // Convertimos las entradas a números por si acaso llegan como strings (ej: "5")
+  const num1 = parseFloat(a);
+  const num2 = parseFloat(b);
 
-const sumaTotal = (...numeros) => {
-  return numeros
-    .map(n => parseFloat(n)) // Intenta convertir todo a número (arregla strings)
-    .filter(n => !isNaN(n))  // Elimina lo que no se pudo convertir (arregla basura)
-    .reduce((acumulado, actual) => acumulado + actual, 0);
-};
+  // Verificamos si la conversión falló (NaN = Not a Number)
+  if (isNaN(num1) || isNaN(num2)) {
+    return "Error: Ambos argumentos deben ser números válidos.";
+  }
 
-console.log(sumaTotal(1, 2, 3, 4));          // 10
-console.log(sumaTotal(5, "10", null, "abc")); // 15 (Ignoró el null y el texto, arregló el "10")
+  return num1 + num2;
+}
