@@ -7,4 +7,4 @@ const sumaTotal = (...numeros) => {
 };
 
 console.log(sumaTotal(1, 2, 3, 4));          // 10
-console.log(sumaTotal(5, "10", null, "abc")); // 15 
+console.log(sumaTotal(5, "10", null, "abc")); // 15 (Ignoró el null y el texto, arregló el "10")
