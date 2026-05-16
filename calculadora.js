@@ -1,3 +1,4 @@
 function suma(a, b) {
- return a + b;
+  const resultado = Number(a) + Number(b);
+  return resultado;
 }
